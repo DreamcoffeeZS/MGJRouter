@@ -19,48 +19,56 @@
 
 + (void)load
 {
-    DemoDetailViewController *detailViewController = [[DemoDetailViewController alloc] init];
     [DemoListViewController registerWithTitle:@"基本使用" handler:^UIViewController *{
+        DemoDetailViewController *detailViewController = [[DemoDetailViewController alloc] init];
         detailViewController.selectedSelector = @selector(demoBasicUsage);
         return detailViewController;
     }];
     
     [DemoListViewController registerWithTitle:@"中文匹配" handler:^UIViewController *{
+        DemoDetailViewController *detailViewController = [[DemoDetailViewController alloc] init];
         detailViewController.selectedSelector = @selector(demoChineseCharacter);
         return detailViewController;
     }];
     
     [DemoListViewController registerWithTitle:@"自定义参数" handler:^UIViewController *{
+        DemoDetailViewController *detailViewController = [[DemoDetailViewController alloc] init];
         detailViewController.selectedSelector = @selector(demoParameters);
         return detailViewController;
     }];
     
     [DemoListViewController registerWithTitle:@"传入字典信息" handler:^UIViewController *{
+        DemoDetailViewController *detailViewController = [[DemoDetailViewController alloc] init];
         detailViewController.selectedSelector = @selector(demoUserInfo);
         return detailViewController;
     }];
     
     [DemoListViewController registerWithTitle:@"Fallback 到全局的 URL Pattern" handler:^UIViewController *{
+        DemoDetailViewController *detailViewController = [[DemoDetailViewController alloc] init];
         detailViewController.selectedSelector = @selector(demoFallback);
         return detailViewController;
     }];
     
     [DemoListViewController registerWithTitle:@"Open 结束后执行 Completion Block" handler:^UIViewController *{
+        DemoDetailViewController *detailViewController = [[DemoDetailViewController alloc] init];
         detailViewController.selectedSelector = @selector(demoCompletion);
         return detailViewController;
     }];
     
     [DemoListViewController registerWithTitle:@"基于 URL 模板生成 具体的 URL" handler:^UIViewController *{
+        DemoDetailViewController *detailViewController = [[DemoDetailViewController alloc] init];
         detailViewController.selectedSelector = @selector(demoGenerateURL);
         return detailViewController;
     }];
     
     [DemoListViewController registerWithTitle:@"取消注册 URL Pattern" handler:^UIViewController *{
+        DemoDetailViewController *detailViewController = [[DemoDetailViewController alloc] init];
         detailViewController.selectedSelector = @selector(demoDeregisterURLPattern);
         return detailViewController;
     }];
     
     [DemoListViewController registerWithTitle:@"同步获取 URL 对应的 Object" handler:^UIViewController *{
+        DemoDetailViewController *detailViewController = [[DemoDetailViewController alloc] init];
         detailViewController.selectedSelector = @selector(demoObjectForURL);
         return detailViewController;
     }];
@@ -135,6 +143,10 @@
         NSInteger textViewHeight = self.resultTextView.frame.size.height;
         [self.resultTextView setContentOffset:CGPointMake(0, MAX(contentHeight - textViewHeight, 0)) animated:YES];
     }
+}
+
+- (void)dealloc {
+    
 }
 
 #pragma mark - Demos
